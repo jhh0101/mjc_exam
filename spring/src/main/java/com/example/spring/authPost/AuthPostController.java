@@ -129,10 +129,12 @@ public class AuthPostController {
      * @return 리다이렉트 경로 (성공 시 상세보기, 실패 시 글쓰기)
      */
     @PostMapping("/create")
-    public String createPost(AuthPostDto post, RedirectAttributes redirectAttributes) {
+    public String createPost(AuthPostDto post, RedirectAttributes redirectAttributes,  HttpServletRequest request) {
         String uploadPath = uploadPathByOS(); // 운영체제에 따른 업로드 경로 설정
 
         try {
+             String userId = (String) request.getSession().getAttribute("userId");
+            post.setUserId(userId);
             // 첨부파일 정보 가져오기
             MultipartFile uploadFile = post.getUploadFile();
 
