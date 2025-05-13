@@ -24,7 +24,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        게시글 등록록
+                        게시글 등록
                     </div>
                     <div class="card-body">
                         card-body
