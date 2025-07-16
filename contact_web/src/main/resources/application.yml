@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: contact_web
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/contact_ex_db?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: contact_user
+    password: a123456789
+
+server:
+  port: 8080
+  servlet:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+mybatis:
+  mapper-locations: classpath:mapper/**/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+  type-aliases-package: com.mjc813.contact_web
